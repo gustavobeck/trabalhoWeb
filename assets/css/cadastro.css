@@ -1,0 +1,39 @@
+.logo {
+  box-sizing: border-box;
+  padding: 2.5% 0;
+}
+.logo img {
+  width: 20%;
+  display: block;
+  margin: 0 auto;
+}
+.sign-up {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: center;
+  grid-column-gap: 2.5%;
+}
+label {
+  margin-bottom: 2.5%;
+}
+input {
+  margin-bottom: 2.5%;
+}
+.label1{
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+.input1{
+  grid-column: 1 / 1;
+  grid-row: 2 / 2;
+}
+button {
+  margin: 2.5% 0;
+}

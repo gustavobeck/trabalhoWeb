@@ -1,0 +1,138 @@
+.logo {
+  box-sizing: border-box;
+  padding: 2.5% 0;
+}
+
+.logo img {
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+}
+header{
+  margin: 0 auto;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+.setting-item {
+  display: flex;
+  column-gap: 2.5%;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--dark-blue);
+  z-index: 1;
+}
+.settings-item__icon{
+  width: 7.5%;
+  justify-self: end;
+}
+.setting-item--menu-opened{
+  color: #fff;
+}
+.username-profile{
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: .1rem solid var(--dark-blue);
+  background-color: var(--light-blue);
+  box-sizing: border-box;
+  border-radius: 2rem;
+  max-width: 300px;
+  padding: 1%;
+  box-sizing: border-box;
+}
+.username-profile__img{
+  width: 15%;
+  position: absolute;
+  left: -5%;
+}
+.username-profile__name{
+  box-sizing: border-box;
+  text-indent: 2rem;
+  color: var(--gray);
+}
+main {
+  display: block;
+  margin: 2.5% auto;
+  width: 80%;
+  height: 80%;
+  background-color: var(--light-blue);
+  border-radius: 2.5rem;
+  box-shadow: 5px 10px 8px #888888;
+  box-sizing: border-box;
+  padding: 2.5% 0;
+}
+.header-game{
+  width: 100%;
+}
+.clock{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1%;
+}
+.clock__icon{
+  width: 2.5%;
+}
+.board{
+  box-sizing: border-box;
+  display: grid;
+  place-items: center;
+  align-content: center;
+}
+.board-2{
+  padding: 5%;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 80%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.card-2{
+  width: 50%;
+}
+.menu{
+  width: 30%;
+  box-sizing: border-box;
+  padding: 2.5%;
+  background-color: var(--dark-blue);
+  height: 100%;
+  width: 30%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  display: flex;
+  flex-direction: column;
+  transition: transform .3s;
+}
+.menu--closed{
+  right: -30%;
+}
+.menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: .1rem solid var(--dark-blue);
+  background-color: var(--light-blue);
+  box-sizing: border-box;
+  border-radius: 2rem;
+  max-width: 100%;
+  padding: 1%;
+  box-sizing: border-box;
+  margin-top: 7.5%;
+}
+
+.menu-item__img {
+  width: 10%;
+  position: absolute;
+  left: -5%;
+}
+.menu-item__title {
+  box-sizing: border-box;
+  text-indent: 2rem;
+  color: var(--gray);
+}

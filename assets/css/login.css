@@ -1,0 +1,40 @@
+.principal{
+  padding: 5% 2.5%;
+}
+.logo{
+  box-sizing: border-box;
+  padding: 5% 0;
+}
+.logo img{
+  width: 35%;
+  display: block;
+  margin: 0 auto;
+}
+label, input, button{
+  display: block;
+}
+.login{
+  width: 45%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.login label{
+  margin-bottom: 2.5%;
+}
+.login input{
+  margin-bottom: 2.5%;
+}
+.login button{
+  margin: 2.5% 0;
+}
+.sign-up-warning{
+  text-align: center;
+  display: block;
+  color: #7f7f7f;
+  font-size: 1.25rem;
+}
+.sign-up-warning a{
+  text-decoration: underline;
+  color: #7f7f7f;
+}
