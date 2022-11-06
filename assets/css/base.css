@@ -3,6 +3,8 @@
   --dark-blue: #3761c0;
   --light-blue: #bdd7ee;
   --white: #fff;
+  --title-font: 'Raleway-SemiBold';
+  --text-font: 'Raleway-Light';
 }
 body {
   overflow-x: hidden;
@@ -10,6 +12,9 @@ body {
   height: 100vh;
   background: rgb(177, 230, 209);
   background: linear-gradient(180deg, rgba(177, 230, 209, 1) 0%, rgba(255, 255, 255, 1) 40%, rgba(255, 253, 253, 1) 60%, rgba(235, 159, 158, 1) 100%);
+}
+header{
+  font-family: var(--title-font);
 }
 input {
   border: 2px solid var(--dark-blue);

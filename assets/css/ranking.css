@@ -29,6 +29,7 @@ main {
   text-align: center;
   color: var(--gray);
   font-size: 1.5rem;
+  font-family: var(--title-font);
 }
 .ranking__item{
   position: relative;
@@ -43,6 +44,7 @@ main {
   padding: 1% 2.5% 1% 1%;
   box-sizing: border-box;
   margin-top: 2.5%;
+  font-family: var(--text-font);
 }
 .ranking__img {
   width: 5%;

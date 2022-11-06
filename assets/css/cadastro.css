@@ -12,6 +12,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  font-family: var(--text-font);
 }
 fieldset {
   display: grid;
@@ -36,4 +37,6 @@ input {
 }
 button {
   margin: 2.5% 0;
+  cursor: pointer;
+  font-family: var(--title-font);
 }

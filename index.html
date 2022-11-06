@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Programação WEB</title>
@@ -21,22 +22,93 @@
         <img onclick="openOrCloseMenu()" class="settings-item__icon"
           src="assets/img/settings-button.png" alt="Ícone configurações">
       </div>
-
     </header>
 
     <main>
-      <div class="header-game">
-        <div class="clock">
-          <img class="clock__icon" src="assets/img/clock.png" alt="Ícone relógio">
-          00:00
+
+      <div class="option">
+        <div class="option__btn">
+          <img class="option__icon" alt="Botão de tamanho do tabuleiro" src="assets/img/board-size.png">
+          <span class="option__text">Tamanho do tabuleiro</span>
         </div>
+        <ul class="option__list display">
+          <li onclick="changeSizeBoard(2)" class="option__item option__item--selected">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+              2 x 2
+            </li>
+          <li onclick="changeSizeBoard(4)" class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+              4 x 4</li>
+          <li onclick="changeSizeBoard(6)" class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">6 x 6</li>
+          <li onclick="changeSizeBoard(8)" class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">8 x 8</li>
+        </ul>
       </div>
-      <div class="board board-2">
-        <img class="card card-2" alt="Imagem do verso do card" src="assets/img/card-verse.png">
-        <img class="card card-2" alt="Imagem do verso do card" src="assets/img/card-verse.png">
-        <img class="card card-2" alt="Imagem do verso do card" src="assets/img/card-verse.png">
-        <img class="card card-2" alt="Imagem do verso do card" src="assets/img/card-verse.png">
+
+      <div class="option">
+        <div class="option__btn">
+          <img class="option__icon" alt="Botão de modo de jogo"
+            src="assets/img/game-mode.png">
+          <span class="option__text">Modo de jogo</span>
+        </div>
+        <ul class="option__list display">
+          <li class="option__item option__item--selected">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+            Clássico</li>
+          <li class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+            Contra-tempo</li>
+        </ul>
       </div>
+
+      <div class="option">
+        <div class="option__btn">
+          <img class="option__icon" alt="Botão de trapaça"
+            src="assets/img/reveal-cards.png">
+          <span class="option__text">Trapaça</span>
+        </div>
+        <ul class="option__list display">
+          <li class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+              Mostrar jogo</li>
+          <li class="option__item">
+            <img class="option__pokebola" src="assets/img/pokebola-icon.png"
+              alt="Ícone Pokebola">
+              Resetar jogo</li>
+        </ul>
+      </div>
+
+      <div class="game">
+        <div class="game__header">
+          <div class="game__clock">
+            <img src="assets/img/clock.png" alt="Ícone relógio">
+            00:00
+          </div>
+        </div>
+        <div class="game__board game__board--2">
+          <!-- <div class="game__card game__card--2">
+            <div class="game__card-inner">
+              <div class="game__card-front">
+                <img class="game__card-content" alt="Imagem do verso do card"
+                  src="assets/img/card-verse.png">
+              </div>
+              <div class="game__card-back">
+                <img class="game__card-content" alt="Imagem do card"
+                  src="assets/img/pikachu-card.png">
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </main>
+
     </main>
 
     <aside class="menu menu--closed">
@@ -48,18 +120,6 @@
         <img class="menu-item__img" src="assets/img/pokebola-icon.png" alt="Ícone Pokebola">
         <div class="menu-item__title">Histórico</div>
       </div>
-      <div class="menu-item">
-        <img class="menu-item__img" src="assets/img/pokebola-icon.png" alt="Ícone Pokebola">
-        <div class="menu-item__title">Tipo de game</div>
-      </div>
-      <div class="menu-item">
-        <img class="menu-item__img" src="assets/img/pokebola-icon.png" alt="Ícone Pokebola">
-        <div class="menu-item__title">Tamanho do tabuleiro</div>
-      </div>
-      <div class="menu-item">
-        <img class="menu-item__img" src="assets/img/pokebola-icon.png" alt="Ícone Pokebola">
-        <div class="menu-item__title">Trapaça</div>
-      </div>
       <div onclick="location.href='atualizar.html'" class="menu-item">
         <img class="menu-item__img" src="assets/img/pokebola-icon.png" alt="Ícone Pokebola">
         <div class="menu-item__title">Editar Perfil</div>
@@ -69,15 +129,6 @@
         <div class="menu-item__title">Sair</div>
       </div>
     </aside>
-    <script>
-      const menu = document.querySelector(".menu");
-      const settingItem = document.querySelector(".setting-item");
-
-      function openOrCloseMenu() {
-        menu.classList.toggle("menu--closed");
-        settingItem.classList.toggle("setting-item--menu-opened");
-      }
-
-    </script>
+    <script src="assets/js/index.js"></script>
   </body>
 </html>
