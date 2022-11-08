@@ -57,11 +57,11 @@
           <span class="option__text">Modo de jogo</span>
         </div>
         <ul class="option__list display">
-          <li class="option__item option__item--selected">
+          <li onclick="changeGameMode('classic')" class="option__item option__item--selected">
             <img class="option__pokebola" src="assets/img/pokebola-icon.png"
               alt="Ícone Pokebola">
             Clássico</li>
-          <li class="option__item">
+          <li onclick="changeGameMode('against-time')" class="option__item">
             <img class="option__pokebola" src="assets/img/pokebola-icon.png"
               alt="Ícone Pokebola">
             Contra-tempo</li>
@@ -75,11 +75,11 @@
           <span class="option__text">Trapaça</span>
         </div>
         <ul class="option__list display">
-          <li class="option__item">
+          <li onclick="revealAllCards()" class="option__item">
             <img class="option__pokebola" src="assets/img/pokebola-icon.png"
               alt="Ícone Pokebola">
               Mostrar jogo</li>
-          <li class="option__item">
+          <li id="unrevealAllCards" onclick="unrevealAllCards()" class="option__item">
             <img class="option__pokebola" src="assets/img/pokebola-icon.png"
               alt="Ícone Pokebola">
               Resetar jogo</li>
@@ -90,7 +90,7 @@
         <div class="game__header">
           <div class="game__clock">
             <img src="assets/img/clock.png" alt="Ícone relógio">
-            00:00
+            <span id="minute">00</span>:<span id="second">00</span>
           </div>
         </div>
         <div class="game__board game__board--2">
@@ -129,6 +129,44 @@
         <div class="menu-item__title">Sair</div>
       </div>
     </aside>
+
+    <div class="modal">
+      <div class="modal-result">
+        <div class="modal-result__cards-correct">
+          You found <span id="pairOfCardsFound">...</span> of <span
+            id="totalPairOfCard">...</span>
+        </div>
+        <div class="modal-result__time">
+          Your time is <span id="finalTime"></span>
+        </div>
+
+        <img class="modal__pokebola" src="assets/img/pokebola-icon.png">
+        <hr>
+
+        <div class="modal__buttons">
+          <button onclick="closeModal()" class="modal__button modal__button--close">
+            Fechar
+          </button>
+          <button onclick="playAgain()" class="modal__button modal__button--play-again">
+            Jogar denovo
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="modal-result--defeat">
+      <div class="modal-result__cards-correct">
+        You found <span id="pairOfCardsFound"></span> of <span
+          id="totalPairOfCard"></span>
+      </div>
+      <div class="time">
+        You used all your time!
+      </div>
+    </div> -->
+    <script src="assets/js/cards.js"></script>
+    <script src="assets/js/config-game.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/timer.js"></script>
     <script src="assets/js/index.js"></script>
   </body>
 </html>

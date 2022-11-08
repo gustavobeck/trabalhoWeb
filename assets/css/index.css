@@ -57,7 +57,7 @@ main{
   height: 80%;
 
   display: grid;
-  grid-template-columns: auto 90%;
+  grid-template-columns: auto 65%;
   grid-template-rows: repeat(3, 1fr);
   /* align-items: space-between; */
   justify-content: center;
@@ -180,7 +180,7 @@ main{
   background-color: transparent;
   perspective: 1000px;
   width: 25%;
-  height: 60%;
+  height: 75%;
   box-sizing: border-box;
 }
 .game__card-inner{
@@ -205,6 +205,9 @@ main{
   height: 100%;
 }
 .game__card--flipped{
+  transform: rotateY(180deg);
+}
+.game__card--revealed{
   transform: rotateY(180deg);
 }
 .game__card--blocked {
@@ -251,4 +254,77 @@ main{
   box-sizing: border-box;
   text-indent: 2rem;
   color: var(--gray);
+}
+.modal{
+  display: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.modal--show{
+  display: block;
+}
+.modal-result{
+  width: 30vw;
+  height: 12.5vw;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--light-blue);
+  /* box-shadow: 5px 10px 8px gray; */
+  border-radius: 1.5vw;
+  border: 1px solid var(--dark-blue);
+
+  box-sizing: border-box;
+
+  padding: 2.5%;
+
+  font-family: var(--title-font);
+  color: var(--dark-blue);
+}
+.modal-result__cards-correct{
+  text-align: center;
+}
+.modal-result__time{
+  margin-top: 2.5%;
+  text-align: center;
+}
+.modal__buttons{
+  position: absolute;
+  bottom: 7.5%;
+
+  width: 85%;
+  /* margin-top: 10%; */
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 2.5%;
+}
+.modal__button{
+  border-radius: .5vw;
+  padding: .5vw;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.modal__button--close{
+  background-color: var(--gray);
+}
+.modal__pokebola{
+  display: block;
+  width: 1.5vw;
+  margin: 4% auto;
+}
+hr{
+  border: 0;
+  border-top: 1px solid var(--gray);
+  margin: 0;
+  margin-top: 5%;
+  height: 1px;
 }
