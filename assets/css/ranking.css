@@ -5,8 +5,15 @@
   margin: 0 auto;
 }
 main {
+  display: block;
+  margin: 2.5% auto;
+  width: 80%;
+  height: 80%;
+  background-color: var(--light-blue);
+  border-radius: 2.5rem;
+  box-shadow: 5px 10px 8px #888888;
   box-sizing: border-box;
-  padding: 2.5% 0%;
+  padding: 2.5% 0;
 }
 .ranking{
   height: 100%;

@@ -40,3 +40,9 @@ button {
   cursor: pointer;
   font-family: var(--title-font);
 }
+.close-icon--atualizar-page{
+  width: 2.5%;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+}

@@ -1,0 +1,4 @@
+name: my-prog-web-work
+recipe: lamp
+config:
+  webroot: .

@@ -1,29 +1,28 @@
 const minuteText = document.querySelector("#minute");
 const secondText = document.querySelector("#second");
 
-minuteText.innerHTML = "00";
-secondText.innerHTML = "00";
+// minuteText.innerHTML = "00";
+// secondText.innerHTML = "00";
 let second = 0;
-let minute = 0;
+// let minute = 0;
 let timer;
 
 function classicMode() {
-  if (second == 59) {
-    second = 0;
-    minute++;
-    secondText.innerHTML = "00";
-    if (minute < 10) {
-      minuteText.innerHTML = "0" + minute;
-    } else {
-      minuteText.innerHTML = minute;
-    }
+  // if (second == 59) {
+  //   second = 0;
+  //   minute++;
+  //   secondText.innerHTML = "00";
+  //   if (minute < 10) {
+  //     minuteText.innerHTML = "0" + minute;
+  //   } else {
+  //     minuteText.innerHTML = minute;
+  //   }
+  // } else {
+  second++;
+  if (second < 10) {
+    secondText.innerHTML = "0" + second;
   } else {
-    second++;
-    if (second < 10) {
-      secondText.innerHTML = "0" + second;
-    } else {
-      secondText.innerHTML = second;
-    }
+    secondText.innerHTML = second;
   }
 }
 

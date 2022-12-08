@@ -1,43 +1,47 @@
-const listOfCards = [
-  'bellsprout',
-  'bulbassaur',
-  'carterpie',
-  'charmander',
-  'clefairy',
-  'diglett',
-  'ekans',
-  'geodude',
-  'growlithe',
-  'jigglypuff',
-  'machop',
-  'mankey',
-  'meowth',
-  'nidoran-masc',
-  'nidoran-fem',
-  'oddish',
-  'paras',
-  'pidgey',
-  'pikachu',
-  'poliwag',
-  'ponyta',
-  'psyduck',
-  'rattata',
-  'sandshrew',
-  'slowpoke',
-  'spearow',
-  'squirtle',
-  'tentacool',
-  'venonat',
-  'vulpix',
-  'weedle',
-  'zubat'
-];
-
 let cards = '';
+
+let numberOfCardsClicked = 0;
 
 const gameBoard = document.querySelector(".game__board");
 
 function setBoard(sizeBoard) {
+
+  const listOfCards = [
+    'bellsprout',
+    'bulbassaur',
+    'carterpie',
+    'charmander',
+    'clefairy',
+    'diglett',
+    'ekans',
+    'geodude',
+    'growlithe',
+    'jigglypuff',
+    'machop',
+    'mankey',
+    'meowth',
+    'nidoran-masc',
+    'nidoran-fem',
+    'oddish',
+    'paras',
+    'pidgey',
+    'pikachu',
+    'poliwag',
+    'ponyta',
+    'psyduck',
+    'rattata',
+    'sandshrew',
+    'slowpoke',
+    'spearow',
+    'squirtle',
+    'tentacool',
+    'venonat',
+    'vulpix',
+    'weedle',
+    'zubat'
+  ];
+
+
   let cardsFromList = listOfCards.sort(() => Math.random() - 0.5)
 
   cardsFromList.splice((sizeBoard ** 2) / 2)
@@ -58,7 +62,8 @@ function setBoard(sizeBoard) {
 
   cards.forEach(item => {
     item.addEventListener('click', () => {
-      if (!item.classList.contains('game__card--flipped')) {
+      if (!item.firstElementChild.classList.contains('game__card--flipped') && !item.firstElementChild.classList.contains('game__card--blocked')) {
+        numberOfCardsClicked++;
         if (cardsFlipped == 1) {
           item.firstElementChild.classList.toggle("game__card--flipped")
           firstCard = item;
@@ -116,8 +121,8 @@ function verifyCards(firstCard, secondCard) {
       clearInterval(timer);
       pairOfCardsFoundText.innerHTML = pairOfCardsToFinishTheGame;
       totalPairOfCardText.innerHTML = (sizeBoard ** 2) / 2;
-      finalTimeText.innerHTML = minuteText.innerHTML + ":" + secondText.innerHTML;
-      modal.classList.add('modal--show');
+      finalTimeText.innerHTML = secondText.innerHTML;
+      matchAjax();
     }
     return 1;
   } else {
@@ -134,3 +139,4 @@ function removeCards() {
     item.remove();
   })
 }
+
